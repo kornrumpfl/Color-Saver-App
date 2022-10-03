@@ -15,7 +15,7 @@ return(
         <div className="div__MainCard" style={{backgroundColor:color}}>
             <HexColorPicker color={color} onChange={setColor} />
             <HexColorInput 
-                prefixed={true}
+                prefixed={false}
                 color={color}
                 onChange={setColor} />
             <button 

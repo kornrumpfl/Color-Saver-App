@@ -8,19 +8,23 @@ import {saveToLocal,loadFromLocal} from "../src/components/localStorage"
 
 function App() {
 
-  const[cards,setCards]=useState(colorObjects);
+  const[cards,setCards]=useState(loadFromLocal("cards") ?? colorObjects);
   /*loadFromLocal() ?? */
+
+useEffect(()=>{
+  saveToLocal("cards",cards);
+},[cards])
   
   function addCard(color){
     setCards([...cards,{id:nanoid(),colorCode:color}])
   }
  
   function onCopy(cardId){
-    alert("lugar errado")
-    setCards(cards.filter(({id}) => cardId ===id ? navigator.clipboard.writeText({cards}):""))};
+      navigator.clipboard.writeText(cards.map((card)=>{
+      return(card.id===cardId?card.colorCode:"")
+    }))};
 
   function deleteCard(cardId){
-    alert(cardId);
     setCards(cards.filter(({id}) => cardId !== id));
       }
 
@@ -32,7 +36,7 @@ function App() {
       <Cards 
         cards={cards} 
         onDelete={deleteCard}
-        onBookmark={onCopy}
+        onCopy={onCopy}
       /> 
     </div>
     </div>
