@@ -1,8 +1,19 @@
 .App {
   display:flex;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
   align-items: center;
+}
+h1{
+  text-align: center;
+}
+
+.App__Cards{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .App-logo {
