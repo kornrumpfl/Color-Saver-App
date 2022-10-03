@@ -1,22 +1,22 @@
-import { nanoid } from 'nanoid'
+
 
 const colorObjects = [
     
     { 
-        id: nanoid(), 
+        id: 1234, 
         colorCode: '#29395d' 
     },
     { 
-        id: nanoid(), 
+        id: 2345, 
         colorCode: '#32bc71' 
     },
     { 
-        id: nanoid(), 
+        id: 3456, 
         colorCode: '#73430c' 
     },
     { 
-        id: nanoid(), 
-        colorCode: '##ca3737' 
+        id: 4567, 
+        colorCode: '#ca3737' 
     },
     ]
 

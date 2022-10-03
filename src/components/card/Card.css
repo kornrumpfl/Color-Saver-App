@@ -12,3 +12,40 @@
     box-shadow: 0 2px 5px #ccc;
 }
 
+input{
+    text-align: center;
+}
+.input__Cards{
+    text-align: center;
+    max-width: 150px;
+}
+
+/* begin block for the trashcan icon */
+.card__button-trashcan {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+  }
+  
+  .card__trashcan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    font-size: 1em;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background: white;
+    color: black;
+  }
+  
+  .card__trashcan:hover {
+    cursor: pointer;
+  }
+  
+  .card__trashcan-icon {
+    fill: currentcolor;
+    width: 1.5em;
+  }
+  /* end block for the trashcan icon */
