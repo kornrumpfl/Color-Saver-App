@@ -19,6 +19,13 @@ useEffect(()=>{
     setCards([...cards,{id:nanoid(),colorCode:color}])
   }
  
+  function onUpdate(cardId){
+      alert(cardId);
+      setCards(cards.map((card)=>{
+        return(
+          card.id===cardId?{...card,colorCode:card.colorCode}:card)}))};
+    
+
   function onCopy(cardId){
       navigator.clipboard.writeText(cards.map((card)=>{
       return(card.id===cardId?card.colorCode:"")
@@ -37,6 +44,7 @@ useEffect(()=>{
         cards={cards} 
         onDelete={deleteCard}
         onCopy={onCopy}
+        onUpdate={onUpdate}
       /> 
     </div>
     </div>

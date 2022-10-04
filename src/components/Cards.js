@@ -1,6 +1,6 @@
 import Card from "../components/card/Card"
 
-function Cards({cards,onDelete,onCopy}){
+function Cards({cards,onDelete,onCopy,onUpdate}){
 
     return(
         <div className="App__Cards">
@@ -10,6 +10,7 @@ function Cards({cards,onDelete,onCopy}){
                         <Card
                         onCopy={()=>onCopy(card.id)}
                         onDelete={()=>onDelete(card.id)}
+                        onUpdate={()=>onUpdate(card.id)}
                         key={card.id} 
                         colorCode={card.colorCode}/>
                     </div> 

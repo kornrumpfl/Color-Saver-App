@@ -2,7 +2,7 @@ import "./Card.css";
 import { useState, useEffect } from "react";
 import ColorName from "./ColorName";
 
-function Card({colorCode, onCopy, onDelete}){
+function Card({colorCode, onCopy, onDelete, onUpdate}){
 
 
 /* const URL = `https://www.thecolorapi.com/id?hex=${colorCode.replace('#', '')}`;    
@@ -27,7 +27,7 @@ useEffect(()=>{
 
 
     return(
-            <form onSubmit={(event)=> event.stopPropagation()}>
+            <form onClick={(event)=> event.stopPropagation()}>
             {/* card itself in form of a button so it can be copied to the clipboard */}
             <button className="cards"
                 type="submit" 
@@ -43,6 +43,9 @@ useEffect(()=>{
                         id="inputHex"
                         name="inputHex"
                         defaultValue={colorCode}
+                        onClick={(event)=> event.preventDefault()}
+                        onChange={onUpdate}
+                            
                     />
                     {/* Delete button for removing the color card */}
                         <div className="card__button-trashcan">
@@ -50,6 +53,7 @@ useEffect(()=>{
                                 className="card__trashcan"
                                 aria-label="delete"
                                 type="button"
+                                name="delete"
                                 onClick={onDelete}
                             >
                             <svg className="card__trashcan-icon" viewBox="0 0 24 24">
